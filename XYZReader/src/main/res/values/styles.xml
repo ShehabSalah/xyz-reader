@@ -29,6 +29,12 @@
         <item name="colorPrimary">@color/primary</item>
         <item name="colorPrimaryDark">@color/primaryDark</item>
         <item name="colorAccent">@color/accent</item>
+        <item name="android:windowContentTransitions">true</item>
+    </style>
+    
+    <style name="mainActivityTheme" parent="myTheme">
+        <item name="android:windowExitTransition">@transition/grid_exit</item>
+        <item name="android:windowReenterTransition">@transition/grid_exit</item>
     </style>
 
 </resources>

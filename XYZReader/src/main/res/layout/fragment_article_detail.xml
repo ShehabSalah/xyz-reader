@@ -21,7 +21,7 @@
                 <!--suppress AndroidLintContentDescription -->
                 <ImageView
                     android:id="@+id/photo"
-                    android:transitionName="img"
+                    android:transitionName="@string/transition_name"
                     android:layout_width="match_parent"
                     android:layout_height="@dimen/detail_card_top_margin"
                     android:scaleType="centerCrop"
@@ -87,23 +87,21 @@
                     android:paddingBottom="@dimen/detail_body_bottom_margin"
                     android:textSize="16sp"
                     android:textColor="@color/black_text"
-                    android:textColorLink="@color/theme_accent"
                     android:lineSpacingMultiplier="@fraction/detail_body_line_spacing_multiplier" />
 
             </com.example.xyzreader.ui.MaxWidthLinearLayout>
         </FrameLayout>
     </com.example.xyzreader.ui.ObservableScrollView>
 
-    <ImageButton android:id="@+id/share_fab"
-        android:stateListAnimator="@anim/fab_state_list_anim"
-        android:background="@drawable/add_fab_background"
-        android:layout_gravity="bottom|end"
-        android:layout_marginRight="@dimen/fab_margin"
-        android:layout_marginBottom="@dimen/fab_margin"
+    <android.support.design.widget.FloatingActionButton
+        android:id="@+id/share_fab"
         android:layout_width="56dp"
         android:layout_height="56dp"
-        android:src="@drawable/ic_share"
+        android:stateListAnimator="@anim/fab_state_list_anim"
+        android:layout_gravity="bottom|end"
+        android:layout_margin="@dimen/fab_margin"
         android:elevation="@dimen/fab_elevation"
-        android:contentDescription="@string/action_share" />
+        android:contentDescription="@string/action_share"
+        app:srcCompat="@drawable/ic_share" />
 
 </com.example.xyzreader.ui.DrawInsetsFrameLayout>

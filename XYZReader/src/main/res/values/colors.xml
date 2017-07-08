@@ -19,7 +19,7 @@
 
     <color name="primary">#FD5621</color>
     <color name="primaryDark">#B0330C</color>
-    <color name="accent">#f51c00</color>
+    <color name="accent">#007545</color>
 
 
     <color name="photo_placeholder">#ccc</color>

@@ -156,8 +156,16 @@ public class ArticleListActivity extends AppCompatActivity implements
             view.setOnClickListener(new View.OnClickListener() {
                 @Override
                 public void onClick(View view) {
-                    startActivity(new Intent(Intent.ACTION_VIEW,
-                            ItemsContract.Items.buildItemUri(getItemId(vh.getAdapterPosition()))));
+                    Bundle bundle = getTransitionBundle();
+                    if (bundle!=null){
+                        Intent intent = new Intent(Intent.ACTION_VIEW,
+                                ItemsContract.Items.buildItemUri(getItemId(vh.getAdapterPosition())));
+                        startActivity(intent, bundle);
+                    }else{
+                        startActivity(new Intent(Intent.ACTION_VIEW,
+                                ItemsContract.Items.buildItemUri(getItemId(vh.getAdapterPosition()))));
+                    }
+
 
                 }
             });
@@ -239,5 +247,9 @@ public class ArticleListActivity extends AppCompatActivity implements
             card_content = (LinearLayout) view.findViewById(R.id.card_content);
             mMutedColor = 0xFF333333;
         }
+    }
+
+    private Bundle getTransitionBundle(){
+        return ActivityOptions.makeSceneTransitionAnimation(this).toBundle();
     }
 }
